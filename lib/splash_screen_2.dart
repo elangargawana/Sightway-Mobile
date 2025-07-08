@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sightway_mobile/theme.dart';
+import 'package:sightway_mobile/login_screen.dart';
+import 'package:sightway_mobile/register_screen.dart';
 
 class SplashScreen2 extends StatelessWidget {
   const SplashScreen2({super.key});
@@ -54,7 +56,10 @@ class SplashScreen2 extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Arahkan ke halaman login
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const LoginScreen()),
+                    ); // Arahkan ke halaman login
                   },
                   child: const Text('Login'),
                 ),
@@ -75,7 +80,10 @@ class SplashScreen2 extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Arahkan ke halaman register
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const RegisterScreen()),
+                    );
                   },
                   child: const Text('Register'),
                 ),
