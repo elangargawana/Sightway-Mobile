@@ -195,7 +195,25 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         onPressed: () {
-                          // Proses login
+                          if (loginAs == 'pemantau') {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              '/pemantau',
+                            );
+                          } else if (loginAs == 'penyandang') {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              '/penyandang',
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  'Silakan pilih role login terlebih dahulu',
+                                ),
+                              ),
+                            );
+                          }
                         },
                         child: Text(
                           'Login',
