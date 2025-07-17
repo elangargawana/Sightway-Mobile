@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:sightway_mobile/splash_screen_1.dart';
-import 'package:sightway_mobile/login_screen.dart';
-import 'package:sightway_mobile/register_screen.dart';
-import 'package:sightway_mobile/penyandang/penyandang_main_page.dart';
+import 'package:sightway_mobile/config/routes.dart';
+import 'package:sightway_mobile/core/constants/constants.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const SightwayApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SightwayApp extends StatelessWidget {
+  const SightwayApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Sightway',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.light,
+        fontFamily: 'Montserrat',
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.purple1),
+        useMaterial3: true,
+      ),
       initialRoute: '/',
-      routes: {
-        '/': (context) => const SplashScreen1(),
-        '/login': (context) => const LoginScreen(),
-        '/register': (context) => const RegisterScreen(),
-        '/penyandang': (context) => const PenyandangMainPage(),
-        // Tambahkan route lain jika diperlukan
-      },
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }

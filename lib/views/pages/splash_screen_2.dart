@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sightway_mobile/theme.dart';
-import 'package:sightway_mobile/login_screen.dart';
-import 'package:sightway_mobile/register_screen.dart';
+import 'package:sightway_mobile/core/constants/constants.dart';
+import 'package:sightway_mobile/views/pages/login_page.dart';
+import 'package:sightway_mobile/views/pages/register_page.dart';
 
 class SplashScreen2 extends StatelessWidget {
   const SplashScreen2({super.key});
@@ -10,7 +10,7 @@ class SplashScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: light,
+      backgroundColor: AppColors.light,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
@@ -25,19 +25,21 @@ class SplashScreen2 extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Judul
-              Text('Sightway', style: bold18.copyWith(color: dark)),
-
+              Text(
+                'Sightway',
+                style: AppTextStyles.bold18.copyWith(color: AppColors.dark),
+              ),
               const SizedBox(height: 8),
 
               // Subjudul
               Text(
                 'Navigate with Clarity',
-                style: regular14.copyWith(color: dark),
+                style: AppTextStyles.regular14.copyWith(color: AppColors.dark),
                 textAlign: TextAlign.center,
               ),
               Text(
                 'Connect with Confidence',
-                style: regular14.copyWith(color: dark),
+                style: AppTextStyles.regular14.copyWith(color: AppColors.dark),
                 textAlign: TextAlign.center,
               ),
 
@@ -49,8 +51,8 @@ class SplashScreen2 extends StatelessWidget {
                 height: 45,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: purple1,
-                    foregroundColor: light,
+                    backgroundColor: AppColors.purple1,
+                    foregroundColor: AppColors.light,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -58,7 +60,7 @@ class SplashScreen2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const LoginScreen()),
+                      MaterialPageRoute(builder: (_) => const LoginPage()),
                     ); // Arahkan ke halaman login
                   },
                   child: const Text('Login'),
@@ -73,8 +75,8 @@ class SplashScreen2 extends StatelessWidget {
                 height: 45,
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    foregroundColor: dark,
-                    side: BorderSide(color: dark),
+                    foregroundColor: AppColors.dark,
+                    side: BorderSide(color: AppColors.dark),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -82,7 +84,7 @@ class SplashScreen2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const RegisterScreen()),
+                      MaterialPageRoute(builder: (_) => const RegisterPage()),
                     );
                   },
                   child: const Text('Register'),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sightway_mobile/splash_screen_2.dart';
-import 'package:sightway_mobile/theme.dart';
+import 'package:sightway_mobile/views/pages/splash_screen_2.dart';
+import 'package:sightway_mobile/core/constants/constants.dart';
 
 class SplashScreen1 extends StatefulWidget {
   const SplashScreen1({super.key});
@@ -26,7 +26,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: light,
+      backgroundColor: AppColors.light,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,15 +36,18 @@ class _SplashScreen1State extends State<SplashScreen1> {
               width: 140,
             ),
             const SizedBox(height: 24),
-            Text('Sightway', style: bold18.copyWith(color: dark)),
+            Text(
+              'Sightway',
+              style: AppTextStyles.bold18.copyWith(color: AppColors.dark),
+            ),
             const SizedBox(height: 8),
             Text(
               'Navigate with Clarity',
-              style: regular14.copyWith(color: dark),
+              style: AppTextStyles.regular14.copyWith(color: AppColors.dark),
             ),
             Text(
               'Connect with Confidence',
-              style: regular14.copyWith(color: dark),
+              style: AppTextStyles.regular14.copyWith(color: AppColors.dark),
             ),
           ],
         ),
